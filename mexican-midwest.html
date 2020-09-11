@@ -33,19 +33,19 @@
 
 
 <script>
-var map = L.map('map').setView([35.826314, -21.389297], 2);
-L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
-	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
+var map = L.map('map').setView([38.626943, -90.259987], 5);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-var data = omnivore.csv('https://raw.githubusercontent.com/Dartmouth-Digital-History-Initiative/TEI-Encoding/master/data-viz/placeName/hodes_placeName.csv');
+var data = omnivore.csv('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-communities-dataset.csv');
 
 var markers = L.markerClusterGroup();
 map.addLayer(markers);
 
 data.on('ready', function(){
   data.eachLayer(function(marker) {
-    marker.bindPopup(marker.toGeoJSON().properties.name);
+    marker.bindPopup(marker.toGeoJSON().properties.place);
   });
 
   markers.addLayer(data);
