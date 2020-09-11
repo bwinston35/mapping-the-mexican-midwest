@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>DDHI Hodes placeName</title>
+
+<style>
+#map {
+    width: 960px;
+    height:500px;
+}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+<link rel='stylesheet' type='text/css' href='https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css'>
+<link rel='stylesheet' type='text/css' href='https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css'>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
+
+</head>
+
+<body>
+
+
+
+<div id="map"></div>
+
+
+<script>
+var map = L.map('map').setView([35.826314, -21.389297], 2);
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
+}).addTo(map);
+
+var data = omnivore.csv('https://raw.githubusercontent.com/Dartmouth-Digital-History-Initiative/TEI-Encoding/master/data-viz/placeName/hodes_placeName.csv');
+
+var markers = L.markerClusterGroup();
+map.addLayer(markers);
+
+data.on('ready', function(){
+  data.eachLayer(function(marker) {
+    marker.bindPopup(marker.toGeoJSON().properties.name);
+  });
+
+  markers.addLayer(data);
+});
+
+</script>
+
+</body>
+
+</html>
