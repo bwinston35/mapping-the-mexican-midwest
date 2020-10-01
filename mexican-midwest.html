@@ -38,17 +38,23 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-var data = omnivore.csv('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-communities-dataset.csv');
+var layerControl = L.control.layers().addTo(map);
+
+var community = omnivore.csv('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-communities-dataset.csv');
+
+var church = omnivore.csv('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-churches-dataset.csv')
+
+var consulate = omnivore.csv('')
 
 var markers = L.markerClusterGroup();
 map.addLayer(markers);
 
-data.on('ready', function(){
-  data.eachLayer(function(marker) {
+community.on('ready', function(){
+  community.eachLayer(function(marker) {
     marker.bindPopup(marker.toGeoJSON().properties.place);
   });
 
-  markers.addLayer(data);
+  markers.addLayer(community);
 });
 
 </script>
