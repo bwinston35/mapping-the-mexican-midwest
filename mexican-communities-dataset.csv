@@ -1,5 +1,5 @@
 place,city,state,latitude,longitude,type,source
-Argentine,Kansas City,Kansas,39.1127014,-94.6268005,metropolitan,Bing Maps
+Argentine,Kansas City,Kansas,39.0750701,-94.6726637,metropolitan,Google Maps
 Scottsbluff,Scottsbluff,Nebraska,41.8675957,-103.6641769,rural,Bing Maps
 Garden City,Garden City,Kansas,37.9749794,-100.8586426,rural,Bing Maps
 St. Louis,St. Louis,Missouri,38.6353569,-90.2009888,metropolitan,Bing Maps
@@ -7,12 +7,12 @@ East St. Louis,East St. Louis,Illinois,38.6229324,-90.1549377,metropolitan,Bing 
 Granite City,Granite City,Illinois,38.7044067,-90.1404724,metropolitan,Bing Maps
 Alton,Alton,Illinois,38.9033394,-90.149353,metropolitan,Bing Maps
 Belleville,Belleville,Illinois,38.5126305,-89.98423,metropolitan,Bing Maps
-Westside,Kansas City,Missouri,39.0997925,-94.5785599,metropolitan,Bing Maps
-East Bottoms,Kansas City,Missouri,39.0997925,-94.5785599,metropolitan,Bing Maps
-Cement City,Kansas City,Missouri,39.0997925,-94.5785599,metropolitan,Bing Maps
-Armourdale,Kansas City,Kansas,39.1127014,-94.6268005,metropolitan,Bing Maps
-Turner,Kansas City,Kansas,39.1127014,-94.6268005,metropolitan,Bing Maps
-Morris,Kansas City,Kansas,39.1127014,-94.6268005,metropolitan,Bing Maps
+Westside,Kansas City,Missouri,39.0858421,-94.5999587,metropolitan,Google Maps
+East Bottoms,Kansas City,Missouri,39.1211971,-94.5526077,metropolitan,Google Maps
+Cement City,Kansas City,Missouri,39.1308811,-94.4276677,metropolitan,Google Maps
+Armourdale,Kansas City,Kansas,39.0845831,-94.6224517,metropolitan,Google Maps
+Turner,Kansas City,Kansas,39.0808091,-94.7072761,metropolitan,Google Maps
+Morris,Kansas City,Kansas,39.0622041,-94.7448451,metropolitan,Google Maps
 Boxcar St. Louis,St. Louis,Missouri,38.6353569,-90.2009888,metropolitan,Bing Maps
 South Omaha,Omaha,Nebraska,41.2586517,-95.9371948,metropolitan,Bing Maps
 Little Italy,Omaha,Nebraska,41.2586517,-95.9371948,metropolitan,Bing Maps
