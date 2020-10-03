@@ -42,19 +42,53 @@ var layerControl = L.control.layers().addTo(map);
 
 var community = omnivore.csv('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-communities-dataset.csv');
 
-var church = omnivore.csv('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-churches-dataset.csv')
+var comm_markers = L.markerClusterGroup();
+map.addLayer(comm_markers);
 
-var consulate = omnivore.csv('')
+var church_markers = L.markerClusterGroup();
+map.addLayer(church_markers);
 
-var markers = L.markerClusterGroup();
-map.addLayer(markers);
+var cons_markers = L.markerClusterGroup();
+map.addLayer(cons_markers);
 
 community.on('ready', function(){
-  community.eachLayer(function(marker) {
-    marker.bindPopup(marker.toGeoJSON().properties.place);
-  });
 
-  markers.addLayer(community);
+  var church = omnivore.csv('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-churches-dataset.csv');
+
+  church.on('ready', function() {
+
+  	var consulate = omnivore.csv('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-consular-organizations-dataset.csv')
+
+  	consulate.on('ready', function () {
+
+  		community.eachLayer(function(marker) {
+    		marker.bindPopup("<b>Community:</b>" + marker.toGeoJSON().properties.place + "</br>" + "<b>Type:</b>" + marker.toGeoJSON().properties.type);
+  		});
+
+  		comm_markers.addLayer(community);
+
+  		church.eachLayer(function(marker) {
+    		marker.bindPopup("<b>Name:</b>" + marker.toGeoJSON().properties.church + "</br>" + "<b>Denomination:</b>" + marker.toGeoJSON().properties.type + "</br>" +         						 "<b>Nationality:</b>" + marker.toGeoJSON().properties.nationality);
+  		});
+
+  		church_markers.addLayer(church);
+
+  		consulate.eachLayer(function(marker) {
+    		marker.bindPopup("<b>Organization:</b>" + marker.toGeoJSON().properties.name + "</br>" + "<b>Type:</b>" + marker.toGeoJSON().properties.type);
+  		});
+
+      comm_markers.addLayer(community);
+      church_markers.addLayer(church);
+      cons_markers.addLayer(consulate);
+
+      map.addLayer(comm_markers);
+      map.addLayer(church_markers);
+      map.addLayer(cons_markers);
+  	})
+
+  })
+
+
 });
 
 </script>
