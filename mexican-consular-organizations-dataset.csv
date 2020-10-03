@@ -1,25 +1,26 @@
-name,type,created,address,city,latitude,longitude
-CHM of Parsons,CHM,c.1921,721 S. Central,"Parsons, Kansas",,
-CHM of Independence,CHM,c.1921,814 S. Penn St.,"Independence, Kansas",,
-CHM of Emporia,CHM,c.1921,P.O. Box 390,"Emporia, Kansas",,
-CHM of Hutchinson,CHM,c.1921,429 C. West. St.,"Hutchinson, Kansas",,
-CHM of Topeka,CHM,c.1921,422 E. 4th St.,"Topeka, Kansas",,
-CHM of Dodge City,CHM,c.1927,P.O. Box 328,"Dodge City, Kansas",,
-CHM of Chanute,CHM,c.1927,1029 South Forest St.,"Chanute, Kansas",,
-CHM of Lyons,CHM,c.1927,P.O. Box 1343,"Lyons, Kansas",,
-CHM of Coffeyville,CHM,c.1927,812 W. 12th St,"Coffeyville, Kansas",,
-CHM of Garden City,CHM,c.1926,P.O. Box 114,"Garden City, Kansas",,
-CHM of Granite City,CHM,,,"Granite City, Illinois",,
-CHM of Scottsbluff,CHM,,P.O. Box 882,"Scottsbluff, Nebraska",,
-CHM of Minatare,CHM,,,"Minatare, Nebraska",,
-CHM of Fairmont City,CHM,1932,"P.O. Box 305, RR3","Fairmont City, Illinois",notes that all other in jurisdictions have been disolved,
-CHM of Bayard,CHM,,,"Bayard, Nebraska",,
-CHM of Omaha,CHM,,,"Omaha, Nebraska",,
-CHM of Wichita,CHM,,,"Wichita, Kansas",,
-CHM of Wellington,CHM,,,"Wellington, Kansas",,
-CHM of East St. Louis,CHM,,3316 Maple Avenue,"East St. Louis, Illinois",,
-"CHM of Independence, MO",CHM,,P.O. Box 77,"Independence, Missouri",,
-CHM of Lyman,CHM,,P.O. Box 233,"Lyman, Nebraska",,
-CHM of Kanopolis,CHM,,General Delivery,"Kanopolis, Kansas",,
-Cruz Azul of Dodge City,Cruz Azul,,801 Ninth Street,"Dodge City, Kansas",,
-Kansas City Consul,,,,,,
+name,type,city,latitude,longitude,source
+CHM of Parsons,CHM,"Parsons, Kansas",37.3404999,-95.2591858,Bing Maps
+CHM of Independence,CHM,"Independence, Kansas",39.0927505,-94.4149094,Bing Maps
+CHM of Emporia,CHM,"Emporia, Kansas",38.4123039,-96.2001648,Bing Maps
+CHM of Hutchinson,CHM,"Hutchinson, Kansas",38.0705338,-97.9131012,Bing Maps
+CHM of Topeka,CHM,"Topeka, Kansas",39.0509758,-95.670433,Bing Maps
+CHM of Dodge City,CHM,"Dodge City, Kansas",37.7654686,-100.0151672,Bing Maps
+CHM of Chanute,CHM,"Chanute, Kansas",37.6817856,-95.4525375,Bing Maps
+CHM of Lyons,CHM,"Lyons, Kansas",38.3505822,-98.2054477,Google Maps
+CHM of Coffeyville,CHM,"Coffeyville, Kansas",37.0329819,-95.615715,Bing Maps
+CHM of Garden City,CHM,"Garden City, Kansas",37.9670132,-100.8774027,Google Maps
+CHM of Granite City,CHM,"Granite City, Illinois",38.7044067,-90.1404724,Bing Maps
+CHM of Scottsbluff,CHM,"Scottsbluff, Nebraska",41.8675957,-103.6641769,Bing Maps
+CHM of Minatare,CHM,"Minatare, Nebraska",41.8114777,-103.5034027,Bing Maps
+CHM of Fairmont City,CHM,"Fairmont City, Illinois",38.6452446,-90.1064911,Bing Maps
+CHM of Bayard,CHM,"Bayard, Nebraska",41.7529488,-103.3374268,Google Maps
+CHM of Omaha,CHM,"Omaha, Nebraska",41.2586517,-95.9371948,Bing Maps
+CHM of Wichita,CHM,"Wichita, Kansas",37.6860237,-97.3355713,Bing Maps
+CHM of Wellington,CHM,"Wellington, Kansas",37.2609352,-97.4014067,Google Maps
+CHM of East St. Louis,CHM,"East St. Louis, Illinois",38.6229324,-90.1549377,Bing Maps
+"CHM of Independence, MO",CHM,"Independence, Missouri",39.0927505,-94.4149094,Bing Maps
+CHM of Lyman,CHM,"Lyman, Nebraska",41.9173691,-104.0453997,Google Maps
+CHM of Kanopolis,CHM,"Kanopolis, Kansas",38.709053,-98.1579056,Bing Maps
+Cruz Azul of Dodge City,Cruz Azul,"Dodge City, Kansas",37.7654686,-100.0151672,Bing Maps
+Kansas City Consul,Consulate,"Kansas City, Missouri",39.0997925,-94.5785599,Bing Maps
+St. Louis,Consulate,"St. Louis, Missouri",38.6353569,-90.2009888,Bing Maps
