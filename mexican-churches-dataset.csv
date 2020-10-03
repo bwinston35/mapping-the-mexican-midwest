@@ -1,24 +1,24 @@
-﻿church,address,city,latitude,longitude,source
-Sacred Heart Parish,2540 Madison Ave,"Kansas City, Missouri",39.080632,-94.595527,Bing Maps
-Church of the Assumption,204 W 8th Avenue,"Topeka, Kansas",38.4074273,-96.1825197,Bing Maps
-Our Lady of Guadalupe,210 N Branner,"Topeka, Kansas",39.0563548,-95.6552217,Bing Maps
-Mexican Mission at St. Thomas Church,632 S Pyle,"Kansas City, Kansas",39.086914,-94.6271638,Bing Maps
-Sacred Heart Church,102 Exchange,"Emporia, Kansas",38.3990296,-96.1750435,Bing Maps
-Our Lady of Guadalupe,21st and Q,"Omaha, Nebraska",41.20563,-95.943033,Bing Maps
-Our Lady of Guadalupe,5023 S 24th St,"Omaha, Nebraska",41.207603,-95.94669,Bing Maps
-Our Lady of Guadalupe,1106 12th ave,"Scottsbluff, Nebraska",41.857856,-103.6471581,Bing Maps
-Mexican Baptist,1419 10th Ave,"Scottsbluff, Nebraska",41.8610337,-103.6494167,Bing Maps
-Mexican Mission House,214 E 18th St,"Scottsbluff, Nebraska",41.864054,-103.659186,Bing Maps
-Our Lady of Guadalupe,2341 Holly,"Kansas City, Missouri",39.084504,-94.598159,Bing Maps
-Our Lady of Guadalupe,24th street,"Kansas City, Missouri",39.0846879,-94.5932421,Bing Maps
-Our Lady of Guadalupe,905 W 23rd Street,"Kansas City, Missouri",39.0795441,-94.4270832,Bing Maps
-Our Lady of Mt. Carmel,813 st paul ave,"Kansas City, Kansas",39.0843211,-94.6252881,Google Maps
-St. Catherine of Alexandria Church,130 Pine Street,"Emporia, Kansas",38.3960861,-96.1957963,Bing Maps
-Our Lady of Covadonga,7100 Virginia Ave,"St. Louis, Missouri",38.553337,-90.257598,Bing Maps
-St. John the Divine/Mission of Our Lady of Mt. Carmel,2511 Metropolitan Ave,"Kansas City, Kansas",39.073011,-94.658547,Bing Maps
-Our Lady of Guadalupe (Basement of St. Mary's Church),512 St. John's Avenue,"Garden City, Kansas",37.9690225,-100.8845307,Google Maps
-Mexican Mission,123 E Santa Fe Ave,"Garden City, Kansas",37.9631957,-100.875741,Google Maps
-Mexican Parish at Sacred Heart Church,1229 Crowell,"Atchison, Kansas",39.5481383,-95.124271,Bing Maps
-Iglesia Bautista,801 23rd St,"Kansas City, Missouri",39.0855082,-94.6028343,Google Maps
-Mexican Christian,1204 W 23rd St,"Kansas City, Missouri",39.0860944,-94.5985311,Bing Maps
-Mexican Baptist,2128 Madison Ave,"Kansas City, Missouri",39.0866013,-94.5949089,Bing Maps
+﻿church,type,nationality,address,city,latitude,longitude,source
+Sacred Heart Parish,Catholic,Anglo,2540 Madison Ave,"Kansas City, Missouri",39.080632,-94.595527,Bing Maps
+Church of the Assumption,Catholic,Anglo,204 W 8th Avenue,"Topeka, Kansas",38.4074273,-96.1825197,Bing Maps
+Our Lady of Guadalupe,Catholic,Mexican,210 N Branner,"Topeka, Kansas",39.0563548,-95.6552217,Bing Maps
+Mexican Mission at St. Thomas Church,Catholic,Anglo/Mexican,632 S Pyle,"Kansas City, Kansas",39.086914,-94.6271638,Bing Maps
+Sacred Heart Church,Catholic,Anglo,102 Exchange,"Emporia, Kansas",38.3990296,-96.1750435,Bing Maps
+Our Lady of Guadalupe,Catholic,Mexican,21st and Q,"Omaha, Nebraska",41.20563,-95.943033,Bing Maps
+Our Lady of Guadalupe,Catholic,Mexican,5023 S 24th St,"Omaha, Nebraska",41.207603,-95.94669,Bing Maps
+Our Lady of Guadalupe,Catholic,Mexican,1106 12th ave,"Scottsbluff, Nebraska",41.857856,-103.6471581,Bing Maps
+Mexican Baptist,Baptist,Mexican,1419 10th Ave,"Scottsbluff, Nebraska",41.8610337,-103.6494167,Bing Maps
+Mexican Mission House,Catholic,Mexican,214 E 18th St,"Scottsbluff, Nebraska",41.864054,-103.659186,Bing Maps
+Our Lady of Guadalupe,Catholic,Mexican,2341 Holly,"Kansas City, Missouri",39.084504,-94.598159,Bing Maps
+Our Lady of Guadalupe,Catholic,Mexican,24th street,"Kansas City, Missouri",39.0846879,-94.5932421,Bing Maps
+Our Lady of Guadalupe,Catholic,Mexican,905 W 23rd Street,"Kansas City, Missouri",39.0795441,-94.4270832,Bing Maps
+Our Lady of Mt. Carmel,Catholic,Mexican,813 st paul ave,"Kansas City, Kansas",39.0843211,-94.6252881,Google Maps
+St. Catherine of Alexandria Church,Catholic,Mexican,130 Pine Street,"Emporia, Kansas",38.3960861,-96.1957963,Bing Maps
+Our Lady of Covadonga,Catholic,Anglo,7100 Virginia Ave,"St. Louis, Missouri",38.553337,-90.257598,Bing Maps
+St. John the Divine/Mission of Our Lady of Mt. Carmel,Catholic,Mexican,2511 Metropolitan Ave,"Kansas City, Kansas",39.073011,-94.658547,Bing Maps
+Our Lady of Guadalupe (Basement of St. Mary's Church),Catholic,Mexican,512 St. John's Avenue,"Garden City, Kansas",37.9690225,-100.8845307,Google Maps
+Mexican Mission,Catholic,Mexican,123 E Santa Fe Ave,"Garden City, Kansas",37.9631957,-100.875741,Google Maps
+Mexican Parish at Sacred Heart Church,Catholic,Mexican,1229 Crowell,"Atchison, Kansas",39.5481383,-95.124271,Bing Maps
+Iglesia Bautista,Protestant,Mexican,801 23rd St,"Kansas City, Missouri",39.0855082,-94.6028343,Google Maps
+Mexican Christian,Christian,Mexican,1204 W 23rd St,"Kansas City, Missouri",39.0860944,-94.5985311,Bing Maps
+Mexican Baptist,Baptist,Mexican,2128 Madison Ave,"Kansas City, Missouri",39.0866013,-94.5949089,Bing Maps
