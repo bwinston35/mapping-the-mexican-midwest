@@ -33,7 +33,7 @@
 
 
 <script>
-var map = L.map('map').setView([38.626943, -90.259987], 5);
+var map = L.map('map').setView([39.7534141,-94.844324], 6);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
@@ -43,13 +43,8 @@ var layerControl = L.control.layers().addTo(map);
 var community = omnivore.csv('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-communities-dataset.csv');
 
 var comm_markers = L.markerClusterGroup();
-map.addLayer(comm_markers);
-
 var church_markers = L.markerClusterGroup();
-map.addLayer(church_markers);
-
 var cons_markers = L.markerClusterGroup();
-map.addLayer(cons_markers);
 
 community.on('ready', function(){
 
@@ -57,7 +52,7 @@ community.on('ready', function(){
 
   church.on('ready', function() {
 
-  	var consulate = omnivore.csv('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-consular-organizations-dataset.csv')
+  	var consulate = omnivore.csv('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-consular-organizations-dataset.csv');
 
   	consulate.on('ready', function () {
 
@@ -65,13 +60,9 @@ community.on('ready', function(){
     		marker.bindPopup("<b>Community:</b>" + marker.toGeoJSON().properties.place + "</br>" + "<b>Type:</b>" + marker.toGeoJSON().properties.type);
   		});
 
-  		comm_markers.addLayer(community);
-
   		church.eachLayer(function(marker) {
-    		marker.bindPopup("<b>Name:</b>" + marker.toGeoJSON().properties.church + "</br>" + "<b>Denomination:</b>" + marker.toGeoJSON().properties.type + "</br>" +         						 "<b>Nationality:</b>" + marker.toGeoJSON().properties.nationality);
+    		marker.bindPopup("<b>Name:</b>" + marker.toGeoJSON().properties.church + "</br>" + "<b>Denomination:</b>" + marker.toGeoJSON().properties.type + "</br>" + "<b>Nationality:</b>" + marker.toGeoJSON().properties.nationality);
   		});
-
-  		church_markers.addLayer(church);
 
   		consulate.eachLayer(function(marker) {
     		marker.bindPopup("<b>Organization:</b>" + marker.toGeoJSON().properties.name + "</br>" + "<b>Type:</b>" + marker.toGeoJSON().properties.type);
@@ -84,9 +75,9 @@ community.on('ready', function(){
       map.addLayer(comm_markers);
       map.addLayer(church_markers);
       map.addLayer(cons_markers);
-  	})
+  	});
 
-  })
+  });
 
 
 });
