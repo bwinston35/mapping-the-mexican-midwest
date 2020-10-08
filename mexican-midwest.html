@@ -40,7 +40,9 @@ attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStree
 
 var community = omnivore.csv('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-communities-dataset.csv');
 
-var comm_markers = L.markerClusterGroup();
+var comm_markers = L.markerClusterGroup({
+  disableClusteringAtZoom: true
+});
 var church_markers = L.markerClusterGroup();
 var cons_markers = L.markerClusterGroup();
 
@@ -70,11 +72,11 @@ community.on('ready', function(){
       church_markers.addLayer(church);
       cons_markers.addLayer(consulate);
 
-      var baseMaps = {}
+      var baseMaps = { }
       var overlayMaps = {
         "Communities": comm_markers,
         "Churches": church_markers,
-        "Consulates": cons_markers
+        "Consular Organizations": cons_markers
       }
 
       L.control.layers(baseMaps, overlayMaps).addTo(map);
