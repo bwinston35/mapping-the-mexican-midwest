@@ -38,8 +38,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-var layerControl = L.control.layers().addTo(map);
-
 var community = omnivore.csv('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-communities-dataset.csv');
 
 var comm_markers = L.markerClusterGroup();
@@ -71,6 +69,15 @@ community.on('ready', function(){
       comm_markers.addLayer(community);
       church_markers.addLayer(church);
       cons_markers.addLayer(consulate);
+
+      var baseMaps = {}
+      var overlayMaps = {
+        "Communities": comm_markers,
+        "Churches": church_markers,
+        "Consulates": cons_markers
+      }
+
+      L.control.layers(baseMaps, overlayMaps).addTo(map);
 
       map.addLayer(comm_markers);
       map.addLayer(church_markers);
