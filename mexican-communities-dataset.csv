@@ -1,32 +1,33 @@
 place,city,state,latitude,longitude,type,source
-Argentine,Kansas City,Kansas,39.0750701,-94.6726637,metropolitan,Google Maps
+"Argentine, KCK",Kansas City,Kansas,39.0750701,-94.6726637,metropolitan,Google Maps
 Scottsbluff,Scottsbluff,Nebraska,41.8675957,-103.6641769,rural,Bing Maps
-Garden City,Garden City,Kansas,37.9749794,-100.8586426,rural,Bing Maps
+Garden City,Garden City,Kansas,37.9643072,-100.8818281,rural,Google Maps
 St. Louis,St. Louis,Missouri,38.6353569,-90.2009888,metropolitan,Bing Maps
 East St. Louis,East St. Louis,Illinois,38.6229324,-90.1549377,metropolitan,Bing Maps
 Granite City,Granite City,Illinois,38.7044067,-90.1404724,metropolitan,Bing Maps
 Alton,Alton,Illinois,38.9033394,-90.149353,metropolitan,Bing Maps
 Belleville,Belleville,Illinois,38.5126305,-89.98423,metropolitan,Bing Maps
-Westside,Kansas City,Missouri,39.0858421,-94.5999587,metropolitan,Google Maps
-East Bottoms,Kansas City,Missouri,39.1211971,-94.5526077,metropolitan,Google Maps
-Cement City,Kansas City,Missouri,39.1308811,-94.4276677,metropolitan,Google Maps
-Armourdale,Kansas City,Kansas,39.0845831,-94.6224517,metropolitan,Google Maps
-Turner,Kansas City,Kansas,39.0808091,-94.7072761,metropolitan,Google Maps
-Morris,Kansas City,Kansas,39.0622041,-94.7448451,metropolitan,Google Maps
-Boxcar St. Louis,St. Louis,Missouri,38.6353569,-90.2009888,metropolitan,Bing Maps
-South Omaha,Omaha,Nebraska,41.2586517,-95.9371948,metropolitan,Bing Maps
-Little Italy,Omaha,Nebraska,41.2586517,-95.9371948,metropolitan,Bing Maps
-Gibson,Omaha,Nebraska,41.2586517,-95.9371948,metropolitan,Bing Maps
+"Westside, KCMO",Kansas City,Missouri,39.0858421,-94.5999587,metropolitan,Google Maps
+"East Bottoms, KCMO",Kansas City,Missouri,39.1211971,-94.5526077,metropolitan,Google Maps
+"Cement City, KCMO",Kansas City,Missouri,39.1308811,-94.4276677,metropolitan,Google Maps
+"Armourdale, KCK",Kansas City,Kansas,39.0845831,-94.6224517,metropolitan,Google Maps
+"Turner, KCK",Kansas City,Kansas,39.0808091,-94.7072761,metropolitan,Google Maps
+"Morris, KCK",Kansas City,Kansas,39.0622041,-94.7448451,metropolitan,Google Maps
+"Boxcar Community, St. Louis",St. Louis,Missouri,38.7092362,-90.2299611,metropolitan,Bing Maps
+South Omaha,Omaha,Nebraska,41.206444,-95.947801,metropolitan,Google Maps
+"Little Italy, Omaha",Omaha,Nebraska,41.245439,-95.923645,metropolitan,Google Maps
+"Gibson, Omaha",Omaha,Nebraska,41.228781,-95.91955,metropolitan,Google Maps
 Council Bluffs,Council Bluffs,Iowa,41.2589645,-95.8543625,metropolitan,Bing Maps
-North Kansas City,Kansas City,Missouri,39.0997925,-94.5785599,metropolitan,Bing Maps
-Sheffield,Kansas City,Missouri,39.0997925,-94.5785599,metropolitan,Bing Maps
-Rosedale,Kansas City,Kansas,39.1127014,-94.6268005,metropolitan,Bing Maps
-La Yarda,Topeka,Kansas,39.0509758,-95.670433,urban,Bing Maps
-South Wichita,Wichita,Kansas,37.6860237,-97.3355713,urban,Bing Maps
-North Wichita,Wichita,Kansas,37.6860237,-97.3355713,urban,Bing Maps
+North Kansas City,Kansas City,Missouri,39.1404371,-94.5701731,metropolitan,Google Maps
+"Sheffield, KCMO",Kansas City,Missouri,39.1068211,-94.5060451,metropolitan,Google Maps
+"Rosedale, KCK",Kansas City,Kansas,39.0514161,-94.6347101,metropolitan,Google Maps
+"La Yarda, Topeka",Topeka,Kansas,39.0492061,-95.6657611,urban,Google Maps
+"El Huarache, Wichita",Wichita,Kansas,37.7172032,-97.3322561,urban,Google Maps
+South Wichita,Wichita,Kansas,37.6754262,-97.3310871,urban,Google Maps
+North Wichita,Wichita,Kansas,37.7227992,-97.3391301,urban,Google Maps
 Wellington,Wellington,Kansas,37.2716751,-97.402092,rural,Bing Maps
 Newton,Newton,Kansas,38.0439606,-97.3450928,rural,Bing Maps
-Las Casitas,Emporia,Kansas,38.4123039,-96.2001648,rural,Bing Maps
+"Las Casitas, Emporia",Emporia,Kansas,38.3945631,-96.2071083,rural,Google Maps
 Hutchinson,Hutchinson,Kansas,38.0705338,-97.9131012,rural,Bing Maps
 Lyons,Lyons,Kansas,38.3455276,-98.2018433,rural,Bing Maps
 Gering,Gering,Nebraska,41.8215408,-103.6617508,rural,Bing Maps
