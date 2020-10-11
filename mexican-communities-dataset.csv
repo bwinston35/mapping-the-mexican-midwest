@@ -2,11 +2,11 @@ place,city,state,latitude,longitude,type,source
 "Argentine, KCK",Kansas City,Kansas,39.0750701,-94.6726637,metropolitan,Google Maps
 Scottsbluff,Scottsbluff,Nebraska,41.8675957,-103.6641769,rural,Bing Maps
 Garden City,Garden City,Kansas,37.9643072,-100.8818281,rural,Google Maps
-St. Louis,St. Louis,Missouri,38.6353569,-90.2009888,metropolitan,Bing Maps
+St. Louis,St. Louis,Missouri,38.57341,-90.242402,metropolitan,Bing Maps
 East St. Louis,East St. Louis,Illinois,38.6229324,-90.1549377,metropolitan,Bing Maps
 Granite City,Granite City,Illinois,38.7044067,-90.1404724,metropolitan,Bing Maps
 Alton,Alton,Illinois,38.9033394,-90.149353,metropolitan,Bing Maps
-Belleville,Belleville,Illinois,38.5126305,-89.98423,metropolitan,Bing Maps
+Belleville,Belleville,Illinois,38.5126305,-89.98423,rural,Bing Maps
 "Westside, KCMO",Kansas City,Missouri,39.0858421,-94.5999587,metropolitan,Google Maps
 "East Bottoms, KCMO",Kansas City,Missouri,39.1211971,-94.5526077,metropolitan,Google Maps
 "Cement City, KCMO",Kansas City,Missouri,39.1308811,-94.4276677,metropolitan,Google Maps
@@ -50,3 +50,7 @@ Coffeyville,Coffeyville,Kansas,37.0329819,-95.615715,rural,Bing Maps
 Fredonia,Fredonia,Kansas,37.5301552,-95.8326035,rural,Bing Maps
 Independence,Independence,Kansas,37.2323494,-95.7065964,rural,Bing Maps
 Atchison,Atchison,Kansas,39.5609016,-95.1273804,rural,Bing Maps
+Kanopolis,Kanopolis,Kansas,38.709053,-98.1579056,rural,Bing Maps
+Lyman,Lyman,Nebraska,41.9173691,-104.0453997,rural,Bing Maps
+Fairmont City,Fairmont City,Illinois,38.6452446,-90.106491,metropolitan,Bing Maps
+St. Joseph,St. Joseph,Missouri,39.7456651,-94.8550807,urban,Bing Maps

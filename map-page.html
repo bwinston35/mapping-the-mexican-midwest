@@ -7,25 +7,25 @@
 <title>Mapping the Mexican Midwest</title>
 
 <style>
-body {
-   background-color: rgb(255, 255, 255);
-}
 h1 {
    color: rgb(0, 104, 71);
 }
 ul {
-float: left;
+float: center;
+list-style-type: square;
 }
-
-li {
-float: left;
+ul li {
+ padding: 5px;
+ margin-left: 10px;
 }
-
+ul li.2 {
+  background-color: white;
+}
 footer{
+  background-color: lightgray;
+  color: black;
   text-align: center;
-    padding: 0px;
-    background-color: lightgray;
-    color: black;
+  font-size: 12px;
 }
 </style>
 </head>
@@ -33,24 +33,24 @@ footer{
   <h1>Mapping the Mexican Midwest</h1>
   <h4>Visualizations of Mexican communities and institutions in the Lower Midwest from 1920 to 1940.</h4>
   <iframe src="/mexican-midwest.html" width="985" height="525" title="Mapping the Mexican Midwest"></iframe>
-<h2>How to use the map</h2>
-<ul style="list-style-type:square">
+<ul>
+  <h2>How to use the map</h2>
   <li>Toggle between communities, churches, and consular organizations using the layer control in the top right corner.</li>
   <li>To learn more about what a marker represents, click to reveal a popup.</li>
 </ul>
-<h2>An explanation of terms</h2>
-<ul style="list-style-type:square">
+<ul>
+  <h2>An explanation of terms</h2>
   <li>Communities include neighborhoods in metropolitan areas, small cities, and rural towns.</li>
   <li>Churches include religious classification and if possible, identify the national identity.</li>
   <li>Consular organizations not only include the Mexican consulates of Kansas City, Missouri and St. Louis, Missouri, but also the many Comisiones Honorificas Mexicanas and Brigadas de la Cruz Azul.</li>
 </ul>
-<p>-</p>
 <footer>
+<ul class="2">
   <p>Created by Bryan Winston</P>
-  <p>Thanks to James Adams for code assistance</P>
+  <p>Thanks to James Adams for assistance</P>
   <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>
+</ul>
 </footer>
-</div>
 </body>
 
 </html>
