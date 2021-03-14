@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Mapping the Mexican Midwest</title>
+
+<style>
+#map {
+    width: 800px;
+    height:475px;
+}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+<link rel='stylesheet' type='text/css' href='https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css'>
+<link rel='stylesheet' type='text/css' href='https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css'>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
+
+</head>
+
+<body>
+
+
+
+<div id="map"></div>
+
+
+<script>
+var map = L.map('map').setView([39.0132371,-95.8484624], 6);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+var community = omnivore.csv('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-communities-dataset.csv');
+
+
+var church_markers = L.markerClusterGroup();
+var cons_markers = L.markerClusterGroup();
+
+community.on('ready', function(){
+
+  var church = omnivore.csv('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-churches-dataset.csv');
+
+  church.on('ready', function() {
+
+  	var consulate = omnivore.csv('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-consular-organizations-dataset.csv');
+
+  	consulate.on('ready', function () {
+
+      var test = community.toGeoJSON();
+      console.log(test);
+
+      community = L.geoJson(test, {
+        pointToLayer: function(feature, latlng) {
+          return L.circleMarker(latlng);
+        }
+      }).addTo(map);
+
+    	community.eachLayer(function(marker) {
+    		marker.bindPopup("<b>Community:</b>" + marker.toGeoJSON().properties.place + "</br>" + "<b>Type:</b>" + marker.toGeoJSON().properties.type);
+  		});
+
+  		church.eachLayer(function(marker) {
+    		marker.bindPopup("<b>Name:</b>" + marker.toGeoJSON().properties.church + "</br>" + "<b>Denomination:</b>" + marker.toGeoJSON().properties.type + "</br>" + "<b>Nationality:</b>" + marker.toGeoJSON().properties.nationality);
+  		});
+
+  		consulate.eachLayer(function(marker) {
+    		marker.bindPopup("<b>Organization:</b>" + marker.toGeoJSON().properties.name + "</br>" + "<b>Type:</b>" + marker.toGeoJSON().properties.type);
+  		});
+
+      church_markers.addLayer(church);
+      cons_markers.addLayer(consulate);
+
+      var baseMaps = { }
+      var overlayMaps = {
+        "Communities": community,
+        "Churches": church_markers,
+        "Consular Organizations": cons_markers
+      }
+
+      L.control.layers(baseMaps, overlayMaps).addTo(map);
+
+      map.addLayer(community);
+      map.addLayer(church_markers);
+      map.addLayer(cons_markers);
+  	});
+
+  });
+
+
+});
+
+</script>
+
+</body>
+
+</html>
