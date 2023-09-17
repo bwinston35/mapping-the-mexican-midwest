@@ -37,9 +37,17 @@ L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}
   ext: 'png'
 }).addTo(map);
 
-var layerControl = L.control.layers(null, null).addTo(map);
+const communities = L.layerGroup();
+const churches = L.layerGroup();
+const consOrgs = L.layerGroup();
 
-var communities = $.get('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-communities-dataset.csv', function(csvString) {
+var layerControl = L.control.layers(null, {
+  "Communities": communities,
+  "Churches": churches,
+  "Consular Organizations": consOrgs,
+}).addTo(map);
+
+$.get('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-communities-dataset.csv', function(csvString) {
    var community = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
 
    for (var i in community) {
@@ -49,12 +57,12 @@ var communities = $.get('https://raw.githubusercontent.com/bryanwinston-ddhi/map
         opacity: 1
       }).bindPopup("<b>Community: </b>" + row.place + "</br>" + "<b>Type: </b>" + row.type);
       
-      marker.addTo(map);
+      communities.addLayer(marker);
     }
 
 });
 
-var churches = $.get('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-churches-dataset.csv', function(csvString) {
+$.get('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-churches-dataset.csv', function(csvString) {
    var greenIcon = new L.Icon({
   iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -72,12 +80,13 @@ var churches = $.get('https://raw.githubusercontent.com/bryanwinston-ddhi/mappin
         icon: greenIcon
       }).bindPopup("<b>Name: </b>" + row.church + "</br>" + "<b>Denomination: </b>" + row.type + "</br>" + "<b>Nationality: </b>" + row.nationality);
       
-      marker.addTo(map);
+      //marker.addTo(map);
+      churches.addLayer(marker);
     }
 
 });
 
-var consOrgs = $.get('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-consular-organizations-dataset.csv', function(csvString) {
+$.get('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-consular-organizations-dataset.csv', function(csvString) {
    var redIcon = new L.Icon({
   iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -95,7 +104,7 @@ var consOrgs = $.get('https://raw.githubusercontent.com/bryanwinston-ddhi/mappin
         icon: redIcon
       }).bindPopup("<b>Organization: </b>" + row.name + "</br>" + "<b>Type: </b>" + row.type);
       
-      marker.addTo(map);
+    consOrgs.addLayer(marker);
     }
 
 });
