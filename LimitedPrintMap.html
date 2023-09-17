@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Mapping the Mexican Midwest</title>
+
+<style>
+#map {
+    width: 800px;
+    height:475px;
+}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+</head>
+
+<body>
+
+
+
+<div id="map"></div>
+
+
+<script>
+var map = L.map('map').setView([39.0132371,-95.8484624], 6);
+L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.{ext}', {
+  attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://www.stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors. Map created by Bryan Winston.',
+  ext: 'png'
+}).addTo(map);
+
+var layerControl = L.control.layers(null, null).addTo(map);
+
+var communities = $.get('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-communities-dataset.csv', function(csvString) {
+   var community = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
+
+   for (var i in community) {
+      var row = community[i];
+
+      var marker = L.circleMarker([row.latitude, row.longitude], {
+        opacity: 1
+      }).bindPopup("<b>Community: </b>" + row.place + "</br>" + "<b>Type: </b>" + row.type);
+      
+      marker.addTo(map);
+    }
+
+});
+
+var churches = $.get('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-churches-dataset.csv', function(csvString) {
+   var greenIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+   var church = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
+
+   for (var i in church) {
+      var row = church[i];
+
+      var marker = L.marker([row.latitude, row.longitude], {
+        icon: greenIcon
+      }).bindPopup("<b>Name: </b>" + row.church + "</br>" + "<b>Denomination: </b>" + row.type + "</br>" + "<b>Nationality: </b>" + row.nationality);
+      
+      marker.addTo(map);
+    }
+
+});
+
+var consOrgs = $.get('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-consular-organizations-dataset.csv', function(csvString) {
+   var redIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+   var consular = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
+
+   for (var i in consular) {
+      var row = consular[i];
+
+      var marker = L.marker([row.latitude, row.longitude], {
+        icon: redIcon
+      }).bindPopup("<b>Organization: </b>" + row.name + "</br>" + "<b>Type: </b>" + row.type);
+      
+      marker.addTo(map);
+    }
+
+});
+
+
+
+</script>
+
+</body>
+
+</html>
