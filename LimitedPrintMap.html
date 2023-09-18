@@ -54,8 +54,8 @@ L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}
 }).addTo(map);
 
 const icon = {
-  height: 12,
-  width: 12
+  height: 14,
+  width: 14
 };
 
 const svgSquare = L.divIcon({
@@ -104,7 +104,8 @@ $.get('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-m
       var marker = L.circleMarker([row.latitude, row.longitude], {
         stroke: false,
         fillColor: "#000000",
-        fillOpacity: 1
+        fillOpacity: 1,
+        radius: 15
       }).bindPopup("<b>Community: </b>" + row.place + "</br>" + "<b>Type: </b>" + row.type);
       
       communities.addLayer(marker);
