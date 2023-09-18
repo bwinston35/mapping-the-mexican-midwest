@@ -11,6 +11,22 @@
     width: 800px;
     height:475px;
 }
+
+.leaflet-overlay-pane g {
+  opacity: .1;
+}
+
+rect {
+  fill: #666;
+  stroke: #ccc;
+  stroke-width: 1px;
+}
+
+.cross rect {
+  fill: #333;
+  stroke-width: 0px;
+}
+
 </style>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -37,6 +53,38 @@ L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}
   ext: 'png'
 }).addTo(map);
 
+const icon = {
+  height: 12,
+  width: 12
+};
+
+const svgSquare = L.divIcon({
+  html: `<svg 
+  width="${icon.width}" 
+  height="${icon.height}" 
+  version="1.1"
+  xmnls="http://www.w3.org/2000/svg">
+  <rect width="${icon.width/2}" height="${icon.height/2}" />
+</svg>`,
+  className: "",
+  iconSize: [icon.width, icon.height],
+  iconAnchor: [icon.width/2, icon.height/2]
+})
+
+const svgCross = L.divIcon({
+  html: `<svg 
+  width="${icon.width}" 
+  height="${icon.height}" 
+  version="1.1"
+  xmnls="http://www.w3.org/2000/svg">
+  <rect y="${icon.height/3}" width="${icon.width}" height="${icon.height/3}" />
+  <rect x="${icon.width/3}" width="${icon.width/3}" height="${icon.height}" />
+</svg>`,
+  className: "cross",
+  iconSize: [icon.width, icon.height],
+  iconAnchor: [icon.width/2, icon.height/2]
+});
+
 const communities = L.layerGroup();
 const churches = L.layerGroup();
 const consOrgs = L.layerGroup();
@@ -54,7 +102,9 @@ $.get('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-m
       var row = community[i];
 
       var marker = L.circleMarker([row.latitude, row.longitude], {
-        opacity: 1
+        stroke: false,
+        fillColor: "#000000",
+        fillOpacity: 1
       }).bindPopup("<b>Community: </b>" + row.place + "</br>" + "<b>Type: </b>" + row.type);
       
       communities.addLayer(marker);
@@ -63,21 +113,13 @@ $.get('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-m
 });
 
 $.get('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-churches-dataset.csv', function(csvString) {
-   var greenIcon = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
-});
    var church = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
 
    for (var i in church) {
       var row = church[i];
 
       var marker = L.marker([row.latitude, row.longitude], {
-        icon: greenIcon
+        icon: svgCross,
       }).bindPopup("<b>Name: </b>" + row.church + "</br>" + "<b>Denomination: </b>" + row.type + "</br>" + "<b>Nationality: </b>" + row.nationality);
       
       //marker.addTo(map);
@@ -87,21 +129,13 @@ $.get('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-m
 });
 
 $.get('https://raw.githubusercontent.com/bryanwinston-ddhi/mapping-the-mexican-midwest/master/mexican-consular-organizations-dataset.csv', function(csvString) {
-   var redIcon = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
-});
    var consular = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
 
    for (var i in consular) {
       var row = consular[i];
 
       var marker = L.marker([row.latitude, row.longitude], {
-        icon: redIcon
+        icon: svgSquare,
       }).bindPopup("<b>Organization: </b>" + row.name + "</br>" + "<b>Type: </b>" + row.type);
       
     consOrgs.addLayer(marker);
